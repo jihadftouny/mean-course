@@ -1,0 +1,10 @@
+button {
+  /* margin-left: 10%; */
+  margin: 0px 20px 20px 20px;
+  width: 120px;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}

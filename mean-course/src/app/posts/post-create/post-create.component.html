@@ -1,0 +1,23 @@
+<mat-card>
+  <!-- #postForm is a reference, if no values assigned (#postForm without =""), it gives access to html element. this gives us acces to this form object angular created (with assigned ngForm) -->
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+
+    <mat-form-field>
+      <mat-label>Post Title</mat-label>
+      <input matInput type="text" name="title" ngModel #title="ngModel" required minlength="3"/>
+      <mat-error *ngIf="title.invalid">Please enter a post title</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Post Content</mat-label>
+      <textarea matInput name="content" ngModel #content="ngModel" required></textarea>
+      <mat-error *ngIf="content.invalid">Please enter a post title</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Save Post
+    </button>
+
+    
+  </form>
+</mat-card>
